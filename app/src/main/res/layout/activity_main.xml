@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="activity"
+            type="android.app.Activity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F4F4F4"
+        tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_close"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvPassDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pass_details"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivClose" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_margin="@dimen/dimen_20dp"
+            android:background="@drawable/card_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivClose" />
+
+        <ImageView
+            android:id="@+id/ivUserImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_20dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:src="@drawable/ic_person"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dimen_20dp"
+            android:text="@string/pass_details"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="italic|bold"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/ivUserImage" />
+
+        <TextView
+            android:id="@+id/tvOffice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:text="@string/offices"
+            android:textColor="@color/grey"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <View
+            android:id="@+id/viewOffice"
+            android:layout_width="0dp"
+            android:layout_height="180dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/card_layout"
+            android:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/view"
+            app:layout_constraintStart_toStartOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/tvOffice" />
+
+        <TextView
+            android:id="@+id/tvLoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20dp"
+            android:text="@string/location"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/viewOffice"
+            app:layout_constraintTop_toTopOf="@+id/viewOffice" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20dp"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text="@string/fetching_location"
+            android:textColor="@color/grey"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/viewOffice"
+            app:layout_constraintStart_toEndOf="@+id/tvLoc"
+            app:layout_constraintTop_toTopOf="@+id/viewOffice" />
+
+        <View
+            android:id="@+id/viewLocation"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="@+id/viewOffice"
+            app:layout_constraintStart_toStartOf="@+id/viewOffice"
+            app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
+
+        <TextView
+            android:id="@+id/tvDesk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20dp"
+            android:text="@string/desk"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/viewOffice"
+            app:layout_constraintTop_toBottomOf="@+id/viewLocation" />
+
+        <TextView
+            android:id="@+id/tvDeskMap"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="@string/view_on_map"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvLocation"
+            app:layout_constraintStart_toEndOf="@+id/tvDesk"
+            app:layout_constraintTop_toTopOf="@+id/tvDesk" />
+
+        <View
+            android:id="@+id/viewDesk"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@color/grey"
+            app:layout_constraintEnd_toEndOf="@+id/viewOffice"
+            app:layout_constraintStart_toStartOf="@+id/viewOffice"
+            app:layout_constraintTop_toBottomOf="@+id/tvDesk" />
+
+
+        <TextView
+            android:id="@+id/tvSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20dp"
+            android:text="@string/schedule"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/viewOffice"
+            app:layout_constraintTop_toBottomOf="@+id/viewDesk" />
+
+        <TextView
+            android:id="@+id/tvScheduleDay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:hint="@string/select_day"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/ic_expand_more"
+            app:layout_constraintEnd_toEndOf="@+id/tvLocation"
+            app:layout_constraintStart_toEndOf="@+id/tvSchedule"
+            app:layout_constraintTop_toTopOf="@+id/tvSchedule" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
