@@ -15,8 +15,7 @@ This project contains current user location and Multiple selection of week days.
 
 ## Packages Used for Project
 
-* for Location
-    implementation 'com.google.android.gms:play-services-location:19.0.1'
+* for Location - **implementation 'com.google.android.gms:play-services-location:19.0.1'**
 	
 ## Authors
 * **Dheeraj Rathore**
